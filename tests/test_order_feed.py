@@ -79,5 +79,4 @@ class TestOrderFeed:
         my_order_number = home_page.get_order_number_from_order_prepared_modal_window()
         order_feed = OrderFeedPage(driver)
         order_feed.go_to_order_feed_page()
-        time.sleep(3)
         assert my_order_number in order_feed.get_number_of_all_pending_orders()

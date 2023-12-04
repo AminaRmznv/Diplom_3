@@ -24,7 +24,7 @@ class TestPersonalAccount:
         personal_account.visibility_of_account_navigation()
         personal_account.click_order_history_button()
         order_history = OrderHistoryPage(driver)
-        assert 'https://stellarburgers.nomoreparties.site/account/order-history' == order_history.check_current_order_history_url()
+        assert 'https://stellarburgers.nomoreparties.site/account/order-history' == order_history.get_current_url()
 
     @allure.title("Тест выхода из личного кабинета")
     @allure.description("Тест проверяет функциональность кнопки выхода из личного кабинета")

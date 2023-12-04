@@ -9,10 +9,6 @@ class OrderHistoryPage(BasePage):
     def visibility_of_order_history(self):
         self.wait_for_element_visibility(OrderHistoryLocators.ORDER_HISTORY)
 
-    @allure.step("Проверка текущего URL страницы истории заказов")
-    def check_current_order_history_url(self):
-        return self.get_current_url()
-
     @allure.step("Нажатие на карточку с моим заказом")
     def click_on_my_order_card(self):
         self.click_on_element(OrderHistoryLocators.MY_ORDER_CARD)

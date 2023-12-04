@@ -13,7 +13,7 @@ class TestForgotPassword:
         login_page = LoginPage(driver)
         login_page.go_to_login_page()
         login_page.click_on_forgot_password_button()
-        current_url = login_page.check_current_login_url()
+        current_url = login_page.get_current_url()
         assert current_url == 'https://stellarburgers.nomoreparties.site/forgot-password'
 
     @allure.title("Тест сброса пароля с действительным email")

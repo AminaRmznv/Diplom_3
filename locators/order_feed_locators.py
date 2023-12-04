@@ -7,7 +7,4 @@ class OrderFeedLocators:
     ORDER_FEED = (By.CLASS_NAME, 'OrderFeed_orderFeed__2RO_j')
     ORDERS_NUMBER_FOR_ALL_PERIOD = (By.XPATH, "//p[contains(text(), 'Выполнено за все время')]/following-sibling::p[1]")
     ORDERS_FOR_TODAY = (By.XPATH, "//p[contains(text(), 'Выполнено за сегодня')]/following-sibling::p[1]")
-    ORDER_FEED_LIST_READY = (By.XPATH, "//ul[contains(@class, 'OrderFeed_orderListReady__1YFem')]/li")
-
-
-
+    ORDER_FEED_LIST_READY = (By.XPATH, "//ul[contains(@class, 'OrderFeed_orderListReady__1YFem')]/li[contains(@class, 'text_type_digits-default')]")

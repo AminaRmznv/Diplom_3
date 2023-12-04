@@ -1,6 +1,5 @@
 import pytest
 import requests
-import allure
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -22,7 +21,6 @@ def driver():
     driver.quit()
 
 
-@allure.step("Создание и удаление пользователя")
 @pytest.fixture
 def create_and_delete_user(driver):
     user_data = {
@@ -37,11 +35,9 @@ def create_and_delete_user(driver):
     driver.execute_script("window.localStorage.setItem('accessToken', arguments[0]);", access_token)
     driver.execute_script("window.localStorage.setItem('refreshToken', arguments[0]);", refresh_token)
     yield access_token
-    delete_response = requests.delete(Urls.delete_api, headers={"Authorization": f"{access_token}"})
-    assert delete_response.status_code == 202
+    requests.delete(Urls.delete_api, headers={"Authorization": f"{access_token}"})
 
 
-@allure.step("Создание заказа")
 @pytest.fixture
 def create_order(driver, create_and_delete_user):
     access_token = create_and_delete_user

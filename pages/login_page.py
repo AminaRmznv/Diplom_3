@@ -13,7 +13,3 @@ class LoginPage(BasePage):
     @allure.step("Клик по кнопке 'Забыли пароль?'")
     def click_on_forgot_password_button(self):
         self.click_on_element(LoginPageLocators.FORGOT_PASSWORD_LINK)
-
-    @allure.step("Проверка текущего URL страницы входа")
-    def check_current_login_url(self):
-        return self.get_current_url()

@@ -36,4 +36,5 @@ class OrderFeedPage(BasePage):
 
     @allure.step("Получение номера ожидающего заказа")
     def get_number_of_all_pending_orders(self):
+        self.wait_for_element_visibility(OrderFeedLocators.ORDER_FEED_LIST_READY)
         return self.get_element_text(OrderFeedLocators.ORDER_FEED_LIST_READY)
